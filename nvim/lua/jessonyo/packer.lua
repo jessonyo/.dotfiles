@@ -3,6 +3,16 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
+
+function InitColorScheme(color)
+	color = color or "rose-pine"
+	vim.cmd.colorscheme(color)
+
+	-- set transparent background
+	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+end
+
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
@@ -18,6 +28,8 @@ return require('packer').startup(function(use)
 	  as = "rose-pine",
 	  config = function()
 		  vim.cmd("colorscheme rose-pine")
+
+		  InitColorScheme()
 	  end
   }
 
