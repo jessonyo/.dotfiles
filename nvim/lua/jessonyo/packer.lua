@@ -40,8 +40,10 @@ return require('packer').startup(function(use)
     use('tpope/vim-fugitive')
 
     use({'neovim/nvim-lspconfig'})
-    use({'hrsh7th/nvim-cmp'})
-    use({'hrsh7th/cmp-nvim-lsp'})
+    use({'hrsh7th/nvim-cmp', requires = {
+        'hrsh7th/cmp-cmdline',
+        'hrsh7th/cmp-nvim-lsp',
+    }})
     use({'williamboman/mason.nvim'})
     use({'williamboman/mason-lspconfig.nvim'})
 
