@@ -7,4 +7,5 @@ own independently*
 
 powerlevel10k: https://github.com/romkatv/powerlevel10k <br />
 zsh-autosugggestions: https://github.com/zsh-users/zsh-autosuggestions <br />
+zsh-syntax-highlighting: https://github.com/zsh-users/zsh-syntax-highlighting <br />
 tmux-plugin-manager: https://github.com/tmux-plugins/tpm <br />
