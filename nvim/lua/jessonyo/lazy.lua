@@ -43,6 +43,7 @@ require("lazy").setup({
     { "neovim/nvim-lspconfig" },
     {
         "hrsh7th/nvim-cmp",
+        version = "*",
         dependencies = {
             "hrsh7th/cmp-cmdline",
             "hrsh7th/cmp-nvim-lsp",
@@ -50,13 +51,10 @@ require("lazy").setup({
     },
     {
         "williamboman/mason.nvim",
-        opts = {}
+        version = ">=2.0.0",
     },
     {
         "williamboman/mason-lspconfig.nvim",
-        opts = {
-            ensure_installed = { "lua_ls", "rust_analyzer" },
-        },
         dependencies = {
             "williamboman/mason.nvim",
             "neovim/nvim-lspconfig",
