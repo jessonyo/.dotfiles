@@ -32,31 +32,17 @@ require('mason').setup({
     },
 })
 
-require('mason-lspconfig').setup({
-    ensure_installed = {'lua_ls', 'rust_analyzer'},
-    handlers = {
-        function(server_name)
-            vim.lsp.config(server_name, {
-                capabilities = capabilities,
-            })
-        end,
-
-        ["lua_ls"] = function()
-            vim.lsp.config('lua_ls', {
-                capabilities = capabilities,
-                settings = {
-                    Lua = {
-                        diagnostics = {globals = {"vim"}},
-                    }
-                }
-            })
-        end,
-    },
+vim.lsp.config('lua_ls', {
+    capabilities = capabilities,
+    settings = {
+        Lua = {
+            diagnostics = { globals = { "vim" } },
+        }
+    }
 })
 
-require('mason-registry').ensure_installed({
-    'lua_ls',
-    'rust_analyzer',
+vim.lsp.config('rust_analyzer', {
+    capabilities = capabilities,
 })
 
 local cmp = require('cmp')
