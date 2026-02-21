@@ -26,7 +26,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 
-require('mason').setup({})
+require('mason').setup({
+    ui = {
+        border = "rounded",
+    },
+})
+
 require('mason-lspconfig').setup({
     ensure_installed = {'lua_ls', 'rust_analyzer'},
     handlers = {
@@ -47,6 +52,11 @@ require('mason-lspconfig').setup({
             })
         end,
     },
+})
+
+require('mason-registry').ensure_installed({
+    'lua_ls',
+    'rust_analyzer',
 })
 
 local cmp = require('cmp')
