@@ -117,5 +117,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Environment Variables
 if [ -d "$HOME/local" ] ; then
-	PATH="$HOME/local/nvim/bin:$PATH"
+	export PATH="$HOME/local/nvim/bin:$PATH"
+	export PATH="$HOME/.local/bin:$PATH"
 fi
