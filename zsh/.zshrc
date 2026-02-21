@@ -120,3 +120,9 @@ if [ -d "$HOME/local" ] ; then
 	export PATH="$HOME/local/nvim/bin:$PATH"
 	export PATH="$HOME/.local/bin:$PATH"
 fi
+
+# Editor
+export EDITOR=vim
+
+# opencode
+export PATH=$HOME/.opencode/bin:$PATH
