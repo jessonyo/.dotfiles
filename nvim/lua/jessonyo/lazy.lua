@@ -63,4 +63,5 @@ require("lazy").setup({
 
     { "nvim-lualine/lualine.nvim" },
     { "lewis6991/gitsigns.nvim" },
+    { "pmizio/typescript-tools.nvim" },
 })

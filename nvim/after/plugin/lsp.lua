@@ -45,6 +45,10 @@ vim.lsp.config('rust_analyzer', {
     capabilities = capabilities,
 })
 
+require('typescript-tools').setup({
+    capabilities = capabilities,
+})
+
 local cmp = require('cmp')
 
 cmp.setup({
