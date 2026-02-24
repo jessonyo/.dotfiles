@@ -11,6 +11,10 @@ require('mason').setup({
     },
 })
 
+require('mason-lspconfig').setup({
+    ensure_installed = { 'lua_ls', 'rust_analyzer', 'ts_ls' },
+})
+
 -- This is where you enable features that only work
 -- if there is a language server active in the file
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -44,20 +48,22 @@ vim.lsp.config('rust_analyzer', {
     capabilities = capabilities,
 })
 
-vim.lsp.config('tsserver', {
+vim.lsp.config('ts_ls', {
     capabilities = capabilities,
     on_attach = function(client, bufnr)
         if client.server_capabilities.documentFormattingProvider then
             vim.api.nvim_create_autocmd("BufWritePre", {
                 group = vim.api.nvim_create_augroup("Format", { clear = true }),
                 buffer = bufnr,
-                callback = function() vim.lsp.buf.formatting_seq_sync() end
+                callback = function() vim.lsp.buf.format({ async = true }) end
             })
         end
     end,
-    filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-    cmd = { "typescript-language-server", "--stdio" }
 })
+
+vim.lsp.enable('lua_ls', true)
+vim.lsp.enable('rust_analyzer', true)
+vim.lsp.enable('ts_ls', true)
 
 local cmp = require('cmp')
 
