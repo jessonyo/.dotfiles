@@ -51,6 +51,7 @@ These require separate installation:
 | Shortcut | Action |
 |----------|--------|
 | `K` | Hover |
+| `<leader>ge` | Show diagnostic in float |
 | `gd` | Go to definition |
 | `gD` | Go to declaration |
 | `gi` | Go to implementation |
@@ -84,7 +85,8 @@ These require separate installation:
 
 | Shortcut | Action |
 |----------|--------|
-| `<leader>gs` | Git status |
+| `<leader>gs` | Git status (opens in new tab) |
+| `gd` | Diff (opens in new tab) |
 
 ### Other
 
