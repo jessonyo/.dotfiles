@@ -12,7 +12,7 @@ require('mason').setup({
 })
 
 require('mason-lspconfig').setup({
-    ensure_installed = { 'lua_ls', 'rust_analyzer', 'ts_ls' },
+    ensure_installed = { 'lua_ls', 'rust_analyzer', 'ts_ls', 'pyright', 'ruff' },
 })
 
 -- This is where you enable features that only work
@@ -62,9 +62,19 @@ vim.lsp.config('ts_ls', {
     end,
 })
 
+vim.lsp.config('pyright', {
+    capabilities = capabilities,
+})
+
+vim.lsp.config('ruff', {
+    capabilities = capabilities,
+})
+
 vim.lsp.enable('lua_ls', true)
 vim.lsp.enable('rust_analyzer', true)
 vim.lsp.enable('ts_ls', true)
+vim.lsp.enable('pyright', true)
+vim.lsp.enable('ruff', true)
 
 local cmp = require('cmp')
 
