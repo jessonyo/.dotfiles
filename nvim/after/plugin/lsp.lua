@@ -6,6 +6,9 @@ local cmp_lsp = require("cmp_nvim_lsp")
 local capabilities = vim.tbl_deep_extend("force", {}, vim.lsp.protocol.make_client_capabilities(), cmp_lsp.default_capabilities())
 
 require('mason').setup({
+    -- Prefer tools already on PATH (e.g. a project/env specific version pinned ruff) over
+    -- mason's own copies.
+    PATH = "append",
     ui = {
         border = "rounded",
     },
