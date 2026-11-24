@@ -13,6 +13,8 @@ git clone https://github.com/jessonyo/.dotfiles.git ~/.dotfiles
 # Create symlinks
 ln -sf ~/.dotfiles/nvim ~/.config/nvim
 ln -sf ~/.dotfiles/zsh/.zshrc ~/.zshrc
+ln -sf ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
+ln -sf ~/.dotfiles/git/.gitconfig ~/.gitconfig
 
 # Start Neovim (lazy.nvim will auto-install plugins)
 nvim
@@ -23,6 +25,14 @@ nvim
 - **Neovim** >= 0.11.0
 - **Zsh** with Oh My Zsh
 - **Tmux** with TPM
+- **git-delta** (pager used by `git/.gitconfig`)
+
+### Machine-specific config
+
+These files are sourced/included if present and are not tracked:
+
+- `~/.zshrc.local`: sourced at the end of `.zshrc`
+- `~/.gitconfig.local`: included at the end of `.gitconfig` (put `user.email` here)
 
 ### Manual Setup (External Plugins)
 
